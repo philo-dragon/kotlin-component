@@ -1,0 +1,66 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.targetSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    testApi 'junit:junit:4.12'
+    androidTestApi 'com.android.support.test:runner:1.0.2'
+    androidTestApi 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api project(':lib_resource')
+
+    api rootProject.ext.deps.multidex
+    // Android
+    api rootProject.ext.deps.design
+    api rootProject.ext.deps.supportV4
+    api rootProject.ext.deps.cardviewV7
+    api rootProject.ext.deps.appcompatV7
+    api rootProject.ext.deps.recyclerviewV7
+    api rootProject.ext.deps.constraint
+
+    // ARouter 配置
+    api(rootProject.ext.deps.arouter) {
+        exclude group: 'com.android.support'
+    }
+
+    // Dagger2
+    api rootProject.ext.deps.dagger
+    annotationProcessor rootProject.ext.deps.dagger_compiler
+
+    // RxJava2 Retrofit2 RxLifecycle
+    api rootProject.ext.deps.rxjava
+    api rootProject.ext.deps.rxandroid
+    api rootProject.ext.deps.rxbinding
+    api rootProject.ext.deps.retrofit
+    api rootProject.ext.deps.converter_gson
+    api rootProject.ext.deps.adapter_rxjava2
+    api rootProject.ext.deps.converter_scalars
+    api rootProject.ext.deps.rxlifecycle
+
+    // okhttp
+    api rootProject.ext.deps.okhttp
+    api rootProject.ext.deps.okio
+    api rootProject.ext.deps.logging_interceptor
+}
