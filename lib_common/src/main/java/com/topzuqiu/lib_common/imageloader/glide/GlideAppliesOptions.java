@@ -17,9 +17,6 @@ package com.topzuqiu.lib_common.imageloader.glide;
 
 import android.content.Context;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.GlideBuilder;
-import com.pfl.common.imageloader.BaseImageLoaderStrategy;
 
 /**
  * ================================================

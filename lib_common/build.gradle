@@ -12,6 +12,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    dataBinding {
+        enabled = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -63,4 +67,13 @@ dependencies {
     api rootProject.ext.deps.okhttp
     api rootProject.ext.deps.okio
     api rootProject.ext.deps.logging_interceptor
+
+    // Glide
+    api rootProject.ext.deps.glide
+    annotationProcessor rootProject.ext.deps.glide_processor
+
+    // 右滑退出
+    api rootProject.ext.deps.swipebackhelper
+    // 工具类
+    api rootProject.ext.deps.UtilCode
 }

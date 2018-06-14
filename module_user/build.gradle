@@ -8,6 +8,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
 
     compileSdkVersion rootProject.ext.android.targetSdkVersion
+    
     defaultConfig {
         if (isModule.toBoolean()) {
             applicationId "com.topzuqiu.module_user"
@@ -17,6 +18,10 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     buildTypes {
