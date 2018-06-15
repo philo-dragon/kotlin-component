@@ -15,7 +15,7 @@ kapt {
 android {
 
     compileSdkVersion rootProject.ext.android.targetSdkVersion
-    
+
     defaultConfig {
         if (isModule.toBoolean()) {
             applicationId "com.topzuqiu.module_user"
@@ -52,6 +52,7 @@ android {
 
 dependencies {
     api project(':lib_common')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     kapt rootProject.ext.deps.arouter_compiler
     kapt rootProject.ext.deps.dagger_compiler
 }

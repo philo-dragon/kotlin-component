@@ -1,17 +1,16 @@
-package cn.com.topzuqiu
+package com.topzuqiu.module_user.ui
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.topzuqiu.lib_common.utils.RouteUtil
-import kotlinx.android.synthetic.main.activity_main.*
+import com.topzuqiu.module_user.R
 
-class MainActivity : AppCompatActivity() {
+@Route(path = RouteUtil.Companion.MODULE_USER_ACTIVITY_SETTING)
+class ModuleUserSettingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tv_view.setOnClickListener { RouteUtil.Companion.actionStart(RouteUtil.MODULE_USER_ACTIVITY_SETTING) }
+        setContentView(R.layout.module_user_activity_setting)
     }
-
 }

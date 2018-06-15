@@ -9,58 +9,65 @@ import java.util.*
 /**
  * Aroute 跳转工具类
  */
-object RouteUtil {
+class RouteUtil {
 
-    /**
-     * 启动Activity
-     * parameters 携带参数
-     *
-     * @param path
-     */
-    @JvmOverloads
-    fun actionStart(path: String, parameters: Map<String, String> = HashMap()) {
-        val build = ARouter.getInstance().build(path)
+    companion object {
 
-        for ((key, value) in parameters) {
-            build.withString(key, value)
+        const val MODULE_USER_ACTIVITY_SETTING = "/module_user/module_user_activity_setting"
+
+        /**
+         * 启动Activity
+         * parameters 携带参数
+         *
+         * @param path
+         */
+        @JvmOverloads
+        fun actionStart(path: String, parameters: Map<String, String> = HashMap()) {
+            val build = ARouter.getInstance().build(path)
+
+            for ((key, value) in parameters) {
+                build.withString(key, value)
+            }
+
+            build.navigation()
         }
 
-        build.navigation()
-    }
-
-    /**
-     * 启动Activity
-     * parameters 携带参数
-     * enterId 进入动画
-     * exitId 退出动画
-     *
-     * @param path
-     */
-    @JvmOverloads
-    fun actionStart(context: Context, path: String, enterId: Int, exitId: Int, parameters: Map<String, String> = HashMap()) {
-        val build = ARouter.getInstance().build(path)
-        for ((key, value) in parameters) {
-            build.withString(key, value)
-        }
-        build.withTransition(enterId, exitId)
-        build.navigation(context)
-    }
-
-
-    /**
-     * 获取Fragment
-     * parameters 携带参数
-     *
-     * @param path
-     */
-    @JvmOverloads
-    fun newFragment(path: String, parameters: Map<String, String> = HashMap()): Fragment {
-        val build = ARouter.getInstance().build(path)
-
-        for ((key, value) in parameters) {
-            build.withString(key, value)
+        /**
+         * 启动Activity
+         * parameters 携带参数
+         * enterId 进入动画
+         * exitId 退出动画
+         *
+         * @param path
+         */
+        @JvmOverloads
+        fun actionStart(context: Context, path: String, enterId: Int, exitId: Int, parameters: Map<String, String> = HashMap()) {
+            val build = ARouter.getInstance().build(path)
+            for ((key, value) in parameters) {
+                build.withString(key, value)
+            }
+            build.withTransition(enterId, exitId)
+            build.navigation(context)
         }
 
-        return build.navigation() as? Fragment ?: throw RuntimeException("path is not Fragment")
+
+        /**
+         * 获取Fragment
+         * parameters 携带参数
+         *
+         * @param path
+         */
+        @JvmOverloads
+        fun newFragment(path: String, parameters: Map<String, String> = HashMap()): Fragment {
+            val build = ARouter.getInstance().build(path)
+
+            for ((key, value) in parameters) {
+                build.withString(key, value)
+            }
+
+            return build.navigation() as? Fragment ?: throw RuntimeException("path is not Fragment")
+        }
+
     }
+
 }
