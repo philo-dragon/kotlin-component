@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
+import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.topzuqiu.lib_common.imageloader.ImageConfig;
 
 

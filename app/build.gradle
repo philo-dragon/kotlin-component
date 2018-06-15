@@ -42,4 +42,5 @@ dependencies {
     }
 
     kapt rootProject.ext.deps.arouter_compiler
+    kapt rootProject.ext.deps.dagger_compiler
 }

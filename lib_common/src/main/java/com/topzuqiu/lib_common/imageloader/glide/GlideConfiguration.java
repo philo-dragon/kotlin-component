@@ -26,8 +26,8 @@ import com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper;
 import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.engine.cache.MemorySizeCalculator;
 import com.bumptech.glide.module.AppGlideModule;
-import com.pfl.common.imageloader.BaseImageLoaderStrategy;
-import com.pfl.common.utils.App;
+import com.topzuqiu.lib_common.imageloader.BaseImageLoaderStrategy;
+import com.topzuqiu.lib_common.utils.App;
 
 import java.io.File;
 

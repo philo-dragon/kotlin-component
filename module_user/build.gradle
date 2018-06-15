@@ -50,4 +50,5 @@ android {
 dependencies {
     api project(':lib_common')
     kapt rootProject.ext.deps.arouter_compiler
+    kapt rootProject.ext.deps.dagger_compiler
 }

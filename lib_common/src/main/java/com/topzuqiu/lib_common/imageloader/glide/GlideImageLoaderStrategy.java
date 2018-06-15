@@ -23,6 +23,12 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.topzuqiu.lib_common.imageloader.BaseImageLoaderStrategy;
 import com.topzuqiu.lib_common.imageloader.ImageConfig;
 
@@ -77,7 +83,6 @@ public class GlideImageLoaderStrategy implements BaseImageLoaderStrategy<ImageCo
         if (config.getTransformation() != null) {//glide用它来改变图形的形状
             glideRequest.transform(config.getTransformation());
         }
-
 
         if (config.getPlaceholder() != 0)//设置占位符
             glideRequest.placeholder(config.getPlaceholder());

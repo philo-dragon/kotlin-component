@@ -11,6 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.topzuqiu.lib_common.BuildConfig;
 import com.topzuqiu.lib_common.di.AppComponent;
 import com.topzuqiu.lib_common.di.AppModule;
+import com.topzuqiu.lib_common.di.DaggerAppComponent;
 import com.topzuqiu.lib_common.di.NetworkModule;
 import com.topzuqiu.lib_common.utils.AppManager;
 import com.topzuqiu.lib_common.utils.BaseUrlManager;

@@ -51,7 +51,7 @@ dependencies {
 
     // Dagger2
     api rootProject.ext.deps.dagger
-    annotationProcessor rootProject.ext.deps.dagger_compiler
+    kapt rootProject.ext.deps.dagger_compiler
 
     // RxJava2 Retrofit2 RxLifecycle
     api rootProject.ext.deps.rxjava
@@ -70,7 +70,7 @@ dependencies {
 
     // Glide
     api rootProject.ext.deps.glide
-    annotationProcessor rootProject.ext.deps.glide_processor
+    kapt rootProject.ext.deps.glide_processor
 
     // 右滑退出
     api rootProject.ext.deps.swipebackhelper
