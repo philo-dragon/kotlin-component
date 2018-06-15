@@ -3,15 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\workspace\kotlin-component\app\app.iml" filepath="D:\workspace\kotlin-component\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlin-component.iml" filepath="$PROJECT_DIR$/kotlin-component.iml" />
-      <module fileurl="file://D:\workspace\kotlin-component\kotlin-component.iml" filepath="D:\workspace\kotlin-component\kotlin-component.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
-      <module fileurl="file://D:\workspace\kotlin-component\lib_common\lib_common.iml" filepath="D:\workspace\kotlin-component\lib_common\lib_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_resource/lib_resource.iml" filepath="$PROJECT_DIR$/lib_resource/lib_resource.iml" />
-      <module fileurl="file://D:\workspace\kotlin-component\lib_resource\lib_resource.iml" filepath="D:\workspace\kotlin-component\lib_resource\lib_resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_user/module_user.iml" filepath="$PROJECT_DIR$/module_user/module_user.iml" />
-      <module fileurl="file://D:\workspace\kotlin-component\module_user\module_user.iml" filepath="D:\workspace\kotlin-component\module_user\module_user.iml" />
     </modules>
   </component>
 </project>
