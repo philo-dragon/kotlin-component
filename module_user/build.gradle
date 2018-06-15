@@ -5,6 +5,13 @@ if (isModule.toBoolean()) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
 android {
 
     compileSdkVersion rootProject.ext.android.targetSdkVersion
@@ -18,10 +25,6 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-
-    dataBinding {
-        enabled = true
     }
 
     buildTypes {
