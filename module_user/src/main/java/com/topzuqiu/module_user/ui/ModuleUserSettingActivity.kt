@@ -13,17 +13,4 @@ class ModuleUserSettingActivity : BaseActivity<ModuleUserActivitySettingBinding>
     override fun getContentView(): Int {
         return R.layout.module_user_activity_setting
     }
-
-    override fun componentInject(appComponent: AppComponent?) {
-    }
-
-    override fun initView() {
-    }
-
-    override fun setToolBar() {
-    }
-
-    override fun initData() {
-    }
-
 }

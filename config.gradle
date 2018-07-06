@@ -42,8 +42,6 @@ ext {
 
             lottie             : "2.5.4",
 
-            swipebackhelper    : "3.1.2",
-
             UtilCode           : "1.9.12",
 
             gradle_version        : "3.0.1",
@@ -88,8 +86,6 @@ ext {
             SmartRefreshLayout : "com.scwang.smartrefresh:SmartRefreshLayout:${depsVersion.SmartRefreshLayout}",//下拉刷新库
 
             lottie             : "com.airbnb.android:lottie:${depsVersion.lottie}",
-
-            swipebackhelper    : "com.jude:swipebackhelper:${depsVersion.swipebackhelper}",//滑动返回库
 
             UtilCode           : "com.blankj:utilcode:${depsVersion.UtilCode}",//工具类
 

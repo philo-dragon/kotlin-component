@@ -8,8 +8,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.jude.swipbackhelper.SwipeBackHelper;
 import com.topzuqiu.lib_common.R;
+import com.topzuqiu.lib_common.di.AppComponent;
 import com.topzuqiu.lib_common.listener.IActivity;
 import com.topzuqiu.lib_common.utils.App;
 import com.topzuqiu.lib_common.utils.StatusBarUtil;
@@ -30,9 +30,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         this.mContext = this;
         super.onCreate(savedInstanceState);
-        SwipeBackHelper.onCreate(this);
-        SwipeBackHelper.getCurrentPage(this)
-                .setSwipeBackEnable(isSwipeBackEnable());
         setContentView();
         drakMode();
         ARouter.getInstance().inject(this);
@@ -42,16 +39,30 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
         initData();
     }
 
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        SwipeBackHelper.onPostCreate(this);
+    /**
+     * 注入公共参数AppComponent
+     *
+     * @param appComponent
+     */
+    public void componentInject(AppComponent appComponent) {
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        SwipeBackHelper.onDestroy(this);
+    /**
+     * 初始化view
+     */
+    public void initView() {
+    }
+
+    /**
+     * 设置titleBar
+     */
+    public void setToolBar() {
+    }
+
+    /**
+     * 初始化数据
+     */
+    public void initData() {
     }
 
     protected int getBackgroundColorRes() {
@@ -75,14 +86,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
         }
     }
 
-    protected boolean isDrakMode() {
-        return true;
-    }
-
-    protected boolean isSwipeBackEnable() {
-        return true;
-    }
-
     protected void setToolBarHasBack(TitleBar titleBar) {
         TitleBarUtil.setToolBarHasBack(titleBar, getTitle().toString());
         titleBar.setLeftClickListener(new View.OnClickListener() {
@@ -91,11 +94,14 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
                 finish();
             }
         });
-
     }
 
     protected void setToolBarNoBack(TitleBar titleBar) {
         TitleBarUtil.setToolBarNoBack(titleBar, getTitle().toString());
+    }
+
+    protected boolean isDrakMode() {
+        return true;
     }
 
     private boolean isSupportDataBinding() {

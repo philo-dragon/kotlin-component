@@ -74,8 +74,6 @@ dependencies {
     api rootProject.ext.deps.glide
     kapt rootProject.ext.deps.glide_processor
 
-    // 右滑退出
-    api rootProject.ext.deps.swipebackhelper
     // 工具类
     api rootProject.ext.deps.UtilCode
 }
