@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
 import com.topzuqiu.lib_common.BuildConfig;
 import com.topzuqiu.lib_common.di.AppComponent;
 import com.topzuqiu.lib_common.di.AppModule;
@@ -44,6 +45,7 @@ public class BaseApplication extends Application {
         initRouter();//初始化Router
         initBaseUrl();
         registerLifecycleCallbacks();//注册Activity生命周期监听
+        registerActivityLifecycleCallbacks(ParallaxHelper.getInstance());//滑动返回初始化
         initAppComponent();//Dagger2 初始化全局参数
     }
 

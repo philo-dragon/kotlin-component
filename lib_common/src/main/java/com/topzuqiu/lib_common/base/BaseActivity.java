@@ -8,6 +8,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
+import com.github.anzewei.parallaxbacklayout.ViewDragHelper;
+import com.github.anzewei.parallaxbacklayout.widget.ParallaxBackLayout;
 import com.topzuqiu.lib_common.R;
 import com.topzuqiu.lib_common.di.AppComponent;
 import com.topzuqiu.lib_common.listener.IActivity;
@@ -65,6 +68,11 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
     public void initData() {
     }
 
+    /**
+     * 设置窗口默认背景颜色
+     *
+     * @return
+     */
     protected int getBackgroundColorRes() {
         return R.color.lib_resource_background;
     }
@@ -74,6 +82,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
             mBinding = DataBindingUtil.setContentView(this, getContentView());
             mBinding.getRoot().setBackgroundResource(getBackgroundColorRes());
         } else {
+            getWindow().setBackgroundDrawableResource(getBackgroundColorRes());
             setContentView(getContentView());
         }
     }
@@ -100,12 +109,64 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends RxAppCompa
         TitleBarUtil.setToolBarNoBack(titleBar, getTitle().toString());
     }
 
+    /**
+     * 状态栏颜色设置
+     *
+     * @return
+     */
     protected boolean isDrakMode() {
+        return false;
+    }
+
+    /**
+     * 是否支持DataBinding
+     *
+     * @return
+     */
+    private boolean isSupportDataBinding() {
         return true;
     }
 
-    private boolean isSupportDataBinding() {
-        return true;
+    /**
+     * ViewDragHelper.EDGE_BOTTOM 底部滑动
+     * ViewDragHelper.EDGE_LEFT 左边滑动
+     * ViewDragHelper.EDGE_TOP 顶部滑动
+     * ViewDragHelper.EDGE_RIGHT 右边滑动
+     *
+     * @param edgeFlag
+     */
+    protected void setEdgeFlag(int edgeFlag) {
+        ParallaxBackLayout layout = ParallaxHelper.getParallaxBackLayout(this, true);
+        layout.setEdgeFlag(edgeFlag);
+        layout.setEnableGesture(true);
+    }
+
+    /**
+     * 禁用滑动返回
+     */
+    protected void disableParallaxBack() {
+        ParallaxHelper.disableParallaxBack(this);
+    }
+
+    /**
+     * ParallaxBackLayout.LAYOUT_COVER 抽屉模式
+     * ParallaxBackLayout.LAYOUT_SLIDE 跟随模式
+     * ParallaxBackLayout.LAYOUT_PARALLAX 微信视差模式
+     *
+     * @param mode
+     */
+    protected void setSlidMode(int mode) {
+        ParallaxHelper.getParallaxBackLayout(this, true).setLayoutType(mode, null);
+    }
+
+    /**
+     * ParallaxBackLayout.EDGE_MODE_DEFAULT 微信模式左边缘滑动返回
+     * ParallaxBackLayout.EDGE_MODE_FULL 全屏返回
+     *
+     * @param type
+     */
+    protected void setSlidType(int type) {
+        ParallaxHelper.getParallaxBackLayout(this, true).setEdgeMode(type);
     }
 
 }

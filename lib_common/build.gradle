@@ -76,4 +76,7 @@ dependencies {
 
     // 工具类
     api rootProject.ext.deps.UtilCode
+
+    //滑动返回库
+    api rootProject.ext.deps.parallaxbacklayout
 }

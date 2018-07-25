@@ -2,7 +2,6 @@ package cn.com.topzuqiu
 
 import cn.com.topzuqiu.databinding.ActivityMainBinding
 import com.topzuqiu.lib_common.base.BaseActivity
-import com.topzuqiu.lib_common.di.AppComponent
 import com.topzuqiu.lib_common.utils.RouteUtil
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -5,6 +5,7 @@ if (isModule.toBoolean()) {
 }
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 kapt {
     arguments {
@@ -55,9 +56,9 @@ android {
 }
 
 //解决kotlin 与 Databinding冲突 1
-kapt {
+/*kapt {
     generateStubs = true
-}
+}*/
 
 dependencies {
     api project(':lib_common')
