@@ -1,4 +1,8 @@
-apply plugin: 'com.android.application'
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -10,15 +14,18 @@ kapt {
 }
 
 android {
+
     compileSdkVersion rootProject.ext.android.targetSdkVersion
+
     defaultConfig {
-        applicationId rootProject.ext.android.applicationId
+        if (isModule.toBoolean()) {
+            applicationId "com.zhihu.matisse"
+        }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        flavorDimensions "versionCode"
     }
 
     dataBinding {
@@ -31,23 +38,32 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
-//解决kotlin 与 Databinding冲突 1
-kapt {
-    generateStubs = true
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                //release模式下排除debug文件夹中的所有Java文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
 }
 
 dependencies {
+    api project(':lib_common')
 
-    if (isModule.toBoolean()) {
-        implementation project(':lib_common')
-    } else {
-        implementation project(':module_user')
-        implementation project(':module_matisse')
-    }
+    implementation 'it.sephiroth.android.library.imagezoom:library:1.0.4'
 
-    kapt rootProject.ext.deps.gradle_version //解决kotlin 与 Databinding冲突 2， 3.0.1 gradle version
+    compileOnly 'com.github.bumptech.glide:glide:3.7.0'
+    compileOnly 'com.squareup.picasso:picasso:2.5.2'
+
+    kapt rootProject.ext.deps.gradle_version //解决kotlin 与 Databinding冲突 2
     kapt rootProject.ext.deps.arouter_compiler
     kapt rootProject.ext.deps.dagger_compiler
 }

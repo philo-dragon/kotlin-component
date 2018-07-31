@@ -1,1 +1,1 @@
-include ':app', ':lib_common', ':lib_resource', ':module_user'
+include ':app', ':lib_common', ':lib_resource', ':module_user', ':module_matisse'
