@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.topzuqiu.lib_common.di.AppComponent;
 import com.topzuqiu.lib_common.listener.IActivity;
 import com.topzuqiu.lib_common.utils.App;
 import com.topzuqiu.lib_common.utils.TitleBarUtil;
@@ -54,7 +55,33 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment i
         initData();
     }
 
-    private boolean isSupportDataBinding() {
+    /**
+     * 注入公共参数AppComponent
+     *
+     * @param appComponent
+     */
+    public void componentInject(AppComponent appComponent) {
+    }
+
+    /**
+     * 初始化view
+     */
+    public void initView() {
+    }
+
+    /**
+     * 设置titleBar
+     */
+    public void setToolBar() {
+    }
+
+    /**
+     * 初始化数据
+     */
+    public void initData() {
+    }
+
+    protected boolean isSupportDataBinding() {
         return true;
     }
 

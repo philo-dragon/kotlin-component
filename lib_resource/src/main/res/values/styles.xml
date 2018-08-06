@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Base application theme. -->
+    <style name="PFL_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--背景透明，不设滑动关闭时背景就是黑的。-->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 不需要滑动返回Activity的主题 -->
+    <style name="PFL_AppTheme_MainTheme" parent="@style/PFL_AppTheme">
+        <!--背景不透明，覆盖PFL_AppTheme windowIsTranslucent 属性。-->
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="@style/PFL_AppTheme_MainTheme">
+        <item name="android:windowBackground">@color/withe</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="PFL_AppTheme_Splash" parent="@style/PFL_AppTheme_MainTheme">
+        <item name="android:windowBackground">@drawable/lib_resource_start_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+</resources>

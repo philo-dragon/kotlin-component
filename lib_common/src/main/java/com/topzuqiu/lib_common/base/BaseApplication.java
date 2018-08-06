@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.Utils;
 import com.github.anzewei.parallaxbacklayout.ParallaxHelper;
 import com.topzuqiu.lib_common.BuildConfig;
 import com.topzuqiu.lib_common.di.AppComponent;
@@ -41,6 +42,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Utils.init(this);
         CrashHandler.getInstance().init(this);
         initRouter();//初始化Router
         initBaseUrl();

@@ -46,6 +46,10 @@ ext {
 
             parallaxbacklayout : "1.1.9",
 
+            MagicIndicator     : "1.5.0",
+
+            circleimageview     : "2.1.0",
+
 
     ]
 
@@ -93,6 +97,11 @@ ext {
             gradle_version     : "com.android.databinding:compiler:${depsVersion.gradle_version}",
 
             parallaxbacklayout : "com.github.anzewei:parallaxbacklayout:${depsVersion.parallaxbacklayout}",//滑动返回库 https://github.com/anzewei/ParallaxBackLayout
+
+            MagicIndicator     : "com.github.hackware1993:MagicIndicator:${depsVersion.MagicIndicator}",
+
+
+            circleimageview     : "de.hdodenhof:circleimageview:${depsVersion.circleimageview}",
 
     ]
 

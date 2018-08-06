@@ -79,4 +79,12 @@ dependencies {
 
     //滑动返回库
     api rootProject.ext.deps.parallaxbacklayout
+
+    //下拉刷新库
+    api rootProject.ext.deps.SmartRefreshLayout
+
+    // ViewPager 指示器框架
+    api rootProject.ext.deps.MagicIndicator
+
+    api rootProject.ext.deps.circleimageview
 }

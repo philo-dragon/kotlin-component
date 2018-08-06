@@ -3,6 +3,7 @@ package com.topzuqiu.lib_common.di;
 import android.app.Application;
 
 
+import com.google.gson.Gson;
 import com.topzuqiu.lib_common.http.RetrofitService;
 import com.topzuqiu.lib_common.imageloader.ImageLoader;
 
@@ -23,6 +24,8 @@ public interface AppComponent {
     RetrofitService getRetrofitService();
 
     ImageLoader getImageLoader();
+
+    Gson getGson();
 
 
 }
