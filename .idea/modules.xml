@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlin-component.iml" filepath="$PROJECT_DIR$/kotlin-component.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_permission/lib_permission.iml" filepath="$PROJECT_DIR$/lib_permission/lib_permission.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib_resource/lib_resource.iml" filepath="$PROJECT_DIR$/lib_resource/lib_resource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_matisse/module_matisse.iml" filepath="$PROJECT_DIR$/module_matisse/module_matisse.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_user/module_user.iml" filepath="$PROJECT_DIR$/module_user/module_user.iml" />
     </modules>
   </component>

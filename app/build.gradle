@@ -44,7 +44,6 @@ dependencies {
         implementation project(':lib_common')
     } else {
         implementation project(':module_user')
-        implementation project(':module_matisse')
     }
 
     kapt rootProject.ext.deps.gradle_version //解决kotlin 与 Databinding冲突 2， 3.0.1 gradle version
