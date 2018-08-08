@@ -37,30 +37,10 @@ public class NetworkModule {
 
     @Provides
     @Singleton
-    Interceptor provideInterceptor() {
-
-        return new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request request = chain.request();
-                Response response = chain.proceed(request);
-                int tryCount = 0;
-                while (!response.isSuccessful() && tryCount < MAX_TRY_COUNT) {
-                    tryCount++;
-                    response = chain.proceed(request);
-                }
-                return response;
-            }
-        };
-    }
-
-    @Provides
-    @Singleton
-    OkHttpClient provideOkHttpClient(HttpLoggingInterceptor httpLoggingInterceptor, Interceptor netIntercepter) {
+    OkHttpClient provideOkHttpClient(HttpLoggingInterceptor httpLoggingInterceptor) {
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
-                .addNetworkInterceptor(netIntercepter)
                 .addNetworkInterceptor(new LoggerInterceptor())
                 .retryOnConnectionFailure(true)
                 .connectTimeout(TIMEOUT, TimeUnit.SECONDS)

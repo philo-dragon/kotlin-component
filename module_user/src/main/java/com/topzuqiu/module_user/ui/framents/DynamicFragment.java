@@ -1,10 +1,8 @@
 package com.topzuqiu.module_user.ui.framents;
 
 
-import com.topzuqiu.lib_common.base.BaseActivity;
 import com.topzuqiu.lib_common.base.BaseFragment;
 import com.topzuqiu.module_user.R;
-import com.topzuqiu.module_user.databinding.FragmentArticleBinding;
 
 public class DynamicFragment extends BaseFragment {
 
